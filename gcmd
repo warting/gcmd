@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Ensure at least one command is provided
+if [ "$#" -eq 0 ]; then
+    echo "Usage: ./gcmd \"<command> && <command> && <command>\""
+    exit 1
+fi
+
+# Capture all arguments as a single string
+CMD="$*"
+
+#echo "Running command: $CMD"
+# Run the Gradle command
+./gradlew runAll -Pcommand="$CMD"
