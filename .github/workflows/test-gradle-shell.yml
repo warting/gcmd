@@ -1,0 +1,25 @@
+name: Test Gradle Shell Execution
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test-shell-commands:
+    name: Run Gradle Shell Commands
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+
+      - name: Test Shell Execution with Gradle
+        run: |
+          ./gradlew runAll -Pcommand="echo 'Running first command' && sleep 2 && echo 'Second command done' && ls -la"
