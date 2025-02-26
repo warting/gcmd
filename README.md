@@ -1,4 +1,4 @@
-# gcmd
+# gcmd: Gradle-based Shell Command Execution and Tracking Tool
 
 **gcmd** is a Gradle-based tool that enables tracking and measuring shell command executions using **Gradle tasks and Develocity Build Scans**. It allows running multiple shell commands while leveraging Gradle's execution tracking, making it ideal for CI/CD workflows and performance analysis.
 
